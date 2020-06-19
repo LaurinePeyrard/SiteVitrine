@@ -1,0 +1,44 @@
+/* Colors */
+$ultraLightGrey: #f8F8F8;
+$lightGrey: #F2F2F2;
+$mainColor: #C2A3CC;
+$mainColorAlt: #BB99B6;
+$middleGrey: #7C7C7C;
+
+/* Mixins */
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+/* Animation */
+@keyframes scaleUp {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    100% {
+      -webkit-transform: scale(15);
+      transform: scale(15);
+    }
+  }
+  
+  @keyframes bounce {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    60% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
