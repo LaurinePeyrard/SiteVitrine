@@ -59,6 +59,21 @@
     }
   }
 
+  #footer{
+    .flex{
+      @include flex-direction(column);
+
+      .flex-third{
+        width: 100%;
+        margin-bottom: 50px;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   
 
 }

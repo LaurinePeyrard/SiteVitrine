@@ -1,5 +1,6 @@
 /* Flex */
 /* Colors */
+/* Fonts */
 /* Mixins */
 /* Animation */
 @-webkit-keyframes scaleUp {
@@ -65,7 +66,10 @@
 html,
 body {
   height: 100%;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 /* Elements */
@@ -98,6 +102,11 @@ a {
   opacity: 0;
 }
 
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Flex */
 .flex {
   display: -webkit-box;
@@ -124,6 +133,28 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.flex2 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.flex3 {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.flex4 {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+.flex-third {
+  width: 32%;
 }
 
 .flex-center {
@@ -174,6 +205,16 @@ a {
           flex-direction: column;
 }
 
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
 /* Padding */
 .pl-0 {
   padding-left: 0;
@@ -201,6 +242,10 @@ a {
 
 .pl-30 {
   padding-left: 30px;
+}
+
+.pr-100 {
+  padding-right: 100px;
 }
 
 /* Margin */
@@ -248,6 +293,14 @@ a {
   margin-bottom: 50px;
 }
 
+.ml-50 {
+  margin-left: 50px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
 .mt-70 {
   margin-top: 70px;
 }
@@ -264,6 +317,30 @@ a {
   margin-left: 100px;
 }
 
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.mr-100 {
+  margin-right: 100px;
+}
+
+.mt-130 {
+  margin-top: 130px;
+}
+
+.mb-130 {
+  margin-bottom: 130px;
+}
+
+.ml-130 {
+  margin-left: 130px;
+}
+
+.mr-130 {
+  margin-right: 130px;
+}
+
 .mt-150 {
   margin-top: 150px;
 }
@@ -272,12 +349,12 @@ a {
   margin-left: 150px;
 }
 
-.mt-130 {
-  margin-top: 130px;
+.mb-150 {
+  margin-bottom: 150px;
 }
 
-.ml-130 {
-  margin-left: 130px;
+.mr-150 {
+  margin-right: 150px;
 }
 
 /* Align */
@@ -300,6 +377,11 @@ a {
   max-width: 100%;
 }
 
+.full-width {
+  width: 100vw;
+  max-width: 100%;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,12 +395,17 @@ a {
   cursor: pointer;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* Colors */
 .white {
   color: white;
 }
 
 /* Colors */
+/* Fonts */
 /* Mixins */
 /* Animation */
 @keyframes scaleUp {
@@ -350,6 +437,7 @@ a {
 html,
 body {
   position: relative;
+  overflow-x: hidden;
 }
 
 body {
@@ -376,6 +464,41 @@ body h2 {
 body h3 {
   font-size: 16px;
   line-height: 28px;
+}
+
+body .title {
+  font-family: "Fira Code", Times, serif;
+}
+
+body .title hr {
+  width: 200vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 3px;
+  border: 0;
+  background-color: #F2F2F2;
+}
+
+body .title div {
+  background-color: white;
+  padding: 0 15px 0 55px;
+  position: relative;
+  margin-left: -15px;
+  display: inline-block;
+}
+
+body .title div:before {
+  display: block;
+  content: ' ';
+  background-image: url("../svg/wave.svg");
+  background-size: 22px 22px;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  left: 15px;
+  z-index: 2;
 }
 
 body .btn {
@@ -473,12 +596,22 @@ body #social a:hover #linkedin {
 }
 
 body #wrapper {
-  padding: 30px 100px 100px 100px;
+  padding: 0px 100px 50px 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body #wrapper section {
   width: auto;
   max-width: 1200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+body #wrapper section#hero {
+  padding-top: 30px;
 }
 
 body #wrapper section#hero #avatar {
@@ -553,6 +686,30 @@ body #wrapper section#hero #skills .tag {
   margin: 20px 0;
 }
 
+body #wrapper section#footer .flex-third {
+  padding: 0 2%;
+}
+
+body #wrapper section#footer p {
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+body #wrapper section#footer a {
+  border: 2px solid black;
+  padding: 3px 7px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+body #wrapper section#footer a:hover {
+  background-color: black;
+  color: white;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
 @media only screen and (max-width: 1080px) {
   body #wrapper {
     padding: 0 50px 100px 50px;
@@ -606,6 +763,20 @@ body #wrapper section#hero #skills .tag {
   }
   #skills > div {
     margin-top: 75px;
+  }
+  #footer .flex {
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+  #footer .flex .flex-third {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  #footer .flex .flex-third:last-child {
+    margin-bottom: 0;
   }
 }
 

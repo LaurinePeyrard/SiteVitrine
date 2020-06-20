@@ -5,6 +5,10 @@ $mainColor: #C2A3CC;
 $mainColorAlt: #BB99B6;
 $middleGrey: #7C7C7C;
 
+/* Fonts */
+$baseFont: "Roboto Condensed", Arial, sans-serif;
+$specialFont: "Fira Code", Times, serif;
+
 /* Mixins */
 @mixin transition($transition...) {
   -moz-transition:    $transition;

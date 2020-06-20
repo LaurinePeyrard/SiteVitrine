@@ -6,16 +6,17 @@
 html,
 body {
     position: relative;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-family: $baseFont;
     color: rgba(0, 0, 0, 0.85);
     position: relative;
 
     h1,
     h2 {
-        font-family: "Fira Code", Times, serif;
+        font-family: $specialFont;
     }
 
     h1 {
@@ -31,6 +32,43 @@ body {
     h3 {
         font-size: 16px;
         line-height: 28px;
+    }
+
+    .title{
+        font-family: $specialFont;
+
+        hr{
+            width: 200vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 3px;
+            border: 0;
+            background-color: $lightGrey;
+        }
+
+        div{
+            background-color: white;
+            padding: 0 15px 0 55px;
+            position: relative;
+            margin-left: -15px;
+            display: inline-block;
+
+            &:before{
+                display: block;
+                content: ' ';
+                background-image: url('../svg/wave.svg');
+                background-size: 22px 22px;
+                height: 22px;
+                width: 22px;
+                position: absolute;
+                left: 15px;
+                z-index: 2;
+            }
+        }
+
+        
     }
 
     .btn {
@@ -123,13 +161,18 @@ body {
     }
 
     #wrapper {
-        padding: 30px 100px 100px 100px;
+        padding: 0px 100px 50px 100px;
+        flex-direction: column;
 
         section {
             width: auto;
             max-width: 1200px;
+            padding-top: 50px;
+            padding-bottom: 50px;
 
             &#hero {
+                padding-top: 30px;
+
                 #avatar {
                     position: relative;
                     font-size: 15px;
@@ -204,6 +247,31 @@ body {
                     }
                 }
 
+            }
+
+            &#footer{
+
+                .flex-third{
+                    padding: 0 2%;
+                }
+
+                p{
+                    font-size: 14px;
+                    margin-top: 30px;
+                }
+
+                a{
+                    border: 2px solid black;
+                    padding: 3px 7px;
+                    text-transform: uppercase;
+                    @include transition(all 0.25s);
+
+                    &:hover{
+                        background-color: black;
+                        color: white;
+                        @include transition(all 0.25s);
+                    }
+                }
             }
         }
     }

@@ -12,8 +12,11 @@
 html,
 body {
     height: 100%;
+    width: 100%;
+    max-width: 100%;
     margin: 0;
-    
+    scroll-behavior: smooth;
+
 }
 
 /* Elements */
@@ -46,6 +49,12 @@ a {
     opacity: 0;
 }
 
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+
 /* Flex */
 .flex {
     @include flex();
@@ -56,6 +65,22 @@ a {
 
 .flex1 {
     flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex3 {
+    flex: 3;
+}
+
+.flex4 {
+    flex: 4;
+}
+
+.flex-third{
+    width: 32%;
 }
 
 .flex-center {
@@ -80,6 +105,14 @@ a {
 
 .flex-column {
     @include flex-direction(column);
+}
+
+.flex-wrap{
+    @include flex-wrap(wrap);
+}
+
+.flex-nowrap{
+    @include flex-wrap(nowrap);
 }
 
 /* Padding */
@@ -109,6 +142,10 @@ a {
 
 .pl-30 {
     padding-left: 30px;
+}
+
+.pr-100 {
+    padding-right: 100px;
 }
 
 /* Margin */
@@ -156,8 +193,16 @@ a {
     margin-bottom: 50px;
 }
 
+.ml-50 {
+    margin-left: 50px;
+}
+
+.mr-50 {
+    margin-right: 50px;
+}
+
 .mt-70 {
-    margin-top:70px;
+    margin-top: 70px;
 }
 
 .mt-80 {
@@ -172,6 +217,30 @@ a {
     margin-left: 100px;
 }
 
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.mr-100 {
+    margin-right: 100px;
+}
+
+.mt-130 {
+    margin-top: 130px;
+}
+
+.mb-130 {
+    margin-bottom: 130px;
+}
+
+.ml-130 {
+    margin-left: 130px;
+}
+
+.mr-130 {
+    margin-right: 130px;
+}
+
 .mt-150 {
     margin-top: 150px;
 }
@@ -180,12 +249,12 @@ a {
     margin-left: 150px;
 }
 
-.mt-130 {
-    margin-top: 130px;
+.mb-150 {
+    margin-bottom: 150px;
 }
 
-.ml-130 {
-    margin-left: 130px;
+.mr-150 {
+    margin-right: 150px;
 }
 
 
@@ -209,11 +278,20 @@ a {
     max-width: 100%;
 }
 
+.full-width {
+    width: 100vw;
+    max-width: 100%;
+}
+
 .btn {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 /* Colors */
