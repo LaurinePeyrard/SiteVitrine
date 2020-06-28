@@ -451,19 +451,26 @@ body h2 {
   font-family: "Fira Code", Times, serif;
 }
 
-body h1 {
+body h1,
+body h2 {
   font-size: 18px;
-  line-height: 35px;
+  line-height: 32px;
 }
 
 body h2 {
-  font-size: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 body h3 {
   font-size: 16px;
   line-height: 28px;
+}
+
+body .emoji {
+  width: 22px;
+  height: 22px;
+  margin-bottom: -5px;
+  margin-left: 3px;
 }
 
 body .title {
@@ -504,7 +511,7 @@ body .title div:before {
 body .btn {
   text-transform: uppercase;
   padding: 10px 15px;
-  border: 2px solid black;
+  border: 2px solid transparent;
   font-size: 15px;
   letter-spacing: 0.5px;
   -webkit-transition: all 0.3s;
@@ -521,24 +528,30 @@ body .btn.main svg {
   fill: white;
 }
 
-body .btn:hover {
+body .btn.main:hover {
+  background-color: transparent;
+  color: #C2A3CC;
+}
+
+body .btn.main:hover svg {
+  fill: #C2A3CC;
+}
+
+body .btn.border {
+  color: black;
+  border-color: black;
+  background-color: white;
+}
+
+body .btn.border:hover {
   background-color: black;
   color: white;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-body .btn:hover svg {
+body .btn.border:hover svg {
   fill: white;
-}
-
-body .btn:hover.main {
-  background-color: transparent;
-  color: #C2A3CC;
-}
-
-body .btn:hover.main svg {
-  fill: #C2A3CC;
 }
 
 body #menu {
@@ -596,7 +609,7 @@ body #social a:hover #linkedin {
 }
 
 body #wrapper {
-  padding: 0px 100px 50px 100px;
+  padding: 0px 100px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -686,6 +699,88 @@ body #wrapper section#hero #skills .tag {
   margin: 20px 0;
 }
 
+body #wrapper section#persona .title div:before {
+  background-image: url("../assets/svg/gamer.svg");
+  margin-top: -2px;
+}
+
+body #wrapper section#persona .persona {
+  position: relative;
+}
+
+body #wrapper section#persona .persona .illu {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  position: absolute;
+  left: 0;
+  margin-top: -50px;
+  z-index: 2;
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.05);
+}
+
+body #wrapper section#persona .persona .illu svg {
+  width: 100%;
+  height: auto;
+}
+
+body #wrapper section#persona .persona .text {
+  background-color: #f8F8F8;
+  padding: 75px 100px 75px 230px;
+  position: relative;
+  margin-left: 150px;
+  margin-bottom: 100px;
+}
+
+body #wrapper section#persona .persona .text .name {
+  font-size: 14px;
+  font-family: "Fira Code", Times, serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+body #wrapper section#persona .persona .text h2 {
+  text-align: left;
+}
+
+body #wrapper section#persona .persona .text hr {
+  width: 35px;
+  border: none;
+  height: 4px;
+  background-color: #C2A3CC;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+body #wrapper section#persona .persona .text p {
+  line-height: 27px;
+}
+
+body #wrapper section#persona .persona .text .btn {
+  position: absolute;
+  right: 100px;
+  bottom: -20px;
+  background-color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+body #wrapper section#persona .persona.inverse .illu {
+  left: auto;
+  right: 0;
+}
+
+body #wrapper section#persona .persona.inverse .text {
+  padding: 75px 230px 75px 100px;
+  margin-right: 150px;
+  margin-left: 0;
+}
+
 body #wrapper section#footer .flex-third {
   padding: 0 2%;
 }
@@ -723,7 +818,8 @@ body #wrapper section#footer a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #avatar1, #avatar2 {
+  #avatar1,
+  #avatar2 {
     display: none;
   }
   body #wrapper section#hero #avatar #avatar-mobile {
@@ -732,6 +828,27 @@ body #wrapper section#footer a:hover {
   }
   body #wrapper section#hero #avatar #avatar-mobile img {
     margin: 0;
+  }
+  body #wrapper section#persona .persona {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 150px;
+  }
+  body #wrapper section#persona .persona .illu {
+    position: relative;
+    margin-bottom: -50px;
+  }
+  body #wrapper section#persona .persona .text {
+    margin: 0 !important;
+    padding: 115px 75px 75px 75px !important;
+  }
+  body #wrapper section#persona .persona .text .btn {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    bottom: -45px;
   }
 }
 
@@ -748,7 +865,8 @@ body #wrapper section#footer a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  #menu, #social {
+  #menu,
+  #social {
     display: none;
   }
   #skills {
@@ -778,9 +896,13 @@ body #wrapper section#footer a:hover {
   #footer .flex .flex-third:last-child {
     margin-bottom: 0;
   }
+  body #wrapper section#persona .persona .text {
+    margin: 0;
+    padding: 115px 50px 50px 50px;
+  }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) and (max-width: 480px) {
   #needs {
     display: block;
   }

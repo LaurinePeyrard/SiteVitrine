@@ -19,14 +19,14 @@ body {
         font-family: $specialFont;
     }
 
-    h1 {
+    h1,
+    h2 {
         font-size: 18px;
-        line-height: 35px;
+        line-height: 32px;
     }
 
     h2 {
-        font-size: 20px;
-        text-align: center;
+        text-align: left;
     }
 
     h3 {
@@ -34,10 +34,17 @@ body {
         line-height: 28px;
     }
 
-    .title{
+    .emoji {
+        width: 22px;
+        height: 22px;
+        margin-bottom: -5px;
+        margin-left: 3px;
+    }
+
+    .title {
         font-family: $specialFont;
 
-        hr{
+        hr {
             width: 200vh;
             position: absolute;
             left: 0;
@@ -48,14 +55,14 @@ body {
             background-color: $lightGrey;
         }
 
-        div{
+        div {
             background-color: white;
             padding: 0 15px 0 55px;
             position: relative;
             margin-left: -15px;
             display: inline-block;
 
-            &:before{
+            &:before {
                 display: block;
                 content: ' ';
                 background-image: url('../assets/svg/wave.svg');
@@ -68,13 +75,13 @@ body {
             }
         }
 
-        
+
     }
 
     .btn {
         text-transform: uppercase;
         padding: 10px 15px;
-        border: 2px solid black;
+        border: 2px solid transparent;
         font-size: 15px;
         letter-spacing: 0.5px;
         @include transition(all 0.3s);
@@ -87,19 +94,8 @@ body {
             svg {
                 fill: white;
             }
-        }
 
-
-        &:hover {
-            background-color: black;
-            color: white;
-            @include transition(all 0.3s);
-
-            svg {
-                fill: white;
-            }
-
-            &.main {
+            &:hover {
                 background-color: transparent;
                 color: $mainColor;
 
@@ -108,6 +104,23 @@ body {
                 }
             }
         }
+
+        &.border {
+            color: black;
+            border-color: black;
+            background-color: white;
+
+            &:hover {
+                background-color: black;
+                color: white;
+                @include transition(all 0.3s);
+
+                svg {
+                    fill: white;
+                }
+            }
+        }
+
     }
 
     #menu {
@@ -161,7 +174,7 @@ body {
     }
 
     #wrapper {
-        padding: 0px 100px 50px 100px;
+        padding: 0px 100px;
         flex-direction: column;
 
         section {
@@ -184,11 +197,12 @@ body {
                         margin: 10px 0;
                     }
 
-                    &:hover{
-                        #avatar1{
+                    &:hover {
+                        #avatar1 {
                             opacity: 0;
                         }
-                        #avatar2{
+
+                        #avatar2 {
                             opacity: 1;
                         }
                     }
@@ -232,7 +246,7 @@ body {
                         }
                     }
 
-                    #avatar-mobile{
+                    #avatar-mobile {
                         display: none;
                     }
 
@@ -249,24 +263,110 @@ body {
 
             }
 
-            &#footer{
+            &#persona {
+                .title {
+                    div:before {
+                        background-image: url("../assets/svg/gamer.svg");
+                        margin-top: -2px;
+                    }
+                }
 
-                .flex-third{
+                .persona {
+                    position: relative;
+
+                    .illu {
+                        width: 300px;
+                        height: 300px;
+                        padding: 50px;
+                        position: absolute;
+                        left: 0;
+                        margin-top: -50px;
+                        z-index: 2;
+                        background-color: white;
+                        @include box-shadow(0px, 3px, 30px, rgba(0, 0, 0, 0.05));
+
+                        svg {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .text {
+                        background-color: $ultraLightGrey;
+                        padding: 75px 100px 75px 230px;
+                        position: relative;
+                        margin-left: 150px;
+                        margin-bottom: 100px;
+
+                        .name {
+                            font-size: 14px;
+                            font-family: $specialFont;
+                            text-transform: uppercase;
+                            margin-bottom: 20px;
+                            letter-spacing: 1.5px;
+                        }
+
+                        h2 {
+                            text-align: left;
+                        }
+
+                        hr {
+                            width: 35px;
+                            border: none;
+                            height: 4px;
+                            background-color: $mainColor;
+                            display: inline-block;
+                            margin-top: 25px;
+                            margin-bottom: 30px;
+                        }
+
+                        p {
+                            line-height: 27px;
+                        }
+
+                        .btn {
+
+                            position: absolute;
+                            right: 100px;
+                            bottom: -20px;
+                            background-color: white;
+                            width: fit-content;
+                        }
+                    }
+
+                    &.inverse {
+                        .illu{
+                            left: auto;
+                            right: 0;
+                        }
+
+                        .text {
+                            padding: 75px 230px 75px 100px;
+                            margin-right: 150px;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            &#footer {
+
+                .flex-third {
                     padding: 0 2%;
                 }
 
-                p{
+                p {
                     font-size: 14px;
                     margin-top: 30px;
                 }
 
-                a{
+                a {
                     border: 2px solid black;
                     padding: 3px 7px;
                     text-transform: uppercase;
                     @include transition(all 0.25s);
 
-                    &:hover{
+                    &:hover {
                         background-color: black;
                         color: white;
                         @include transition(all 0.25s);
