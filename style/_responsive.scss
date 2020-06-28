@@ -41,7 +41,7 @@
 
       .text {
         margin: 0 !important;
-        padding: 115px 75px 75px 75px !important;
+        padding: 115px 75px 75px 75px;
 
         .btn {
           left: 50%;
@@ -49,6 +49,12 @@
           bottom: -45px;
         }
 
+      }
+
+      &.inverse{
+        .text{
+          padding: 115px 75px 75px 75px;
+        }
       }
 
     }
@@ -102,7 +108,14 @@
     .persona {
       .text {
         margin: 0;
-        padding: 115px 50px 50px 50px;
+        padding: 75px 0 50px 0;
+        background-color: transparent;
+      }
+
+      &.inverse{
+        .text{
+          padding: 75px 0 50px 0;
+        }
       }
     }
 

@@ -842,13 +842,16 @@ body #wrapper section#footer a:hover {
   }
   body #wrapper section#persona .persona .text {
     margin: 0 !important;
-    padding: 115px 75px 75px 75px !important;
+    padding: 115px 75px 75px 75px;
   }
   body #wrapper section#persona .persona .text .btn {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     bottom: -45px;
+  }
+  body #wrapper section#persona .persona.inverse .text {
+    padding: 115px 75px 75px 75px;
   }
 }
 
@@ -898,7 +901,11 @@ body #wrapper section#footer a:hover {
   }
   body #wrapper section#persona .persona .text {
     margin: 0;
-    padding: 115px 50px 50px 50px;
+    padding: 75px 0 50px 0;
+    background-color: transparent;
+  }
+  body #wrapper section#persona .persona.inverse .text {
+    padding: 75px 0 50px 0;
   }
 }
 
